@@ -10,6 +10,9 @@ contract DeploymentConfig is Script {
 
     struct NetworkConfig {
         address deployer;
+        string tokenName;
+        string tokenSymbol;
+        uint8 decimalUnits;
     }
 
     NetworkConfig public activeNetworkConfig;
@@ -27,7 +30,12 @@ contract DeploymentConfig is Script {
     }
 
     function getOrCreateAnvilEthConfig() public view returns (NetworkConfig memory) {
-        return NetworkConfig({ deployer: deployer });
+        return NetworkConfig({
+            deployer: deployer,
+            tokenName: "Status Network Token",
+            tokenSymbol: "SNT",
+            decimalUnits: 18
+        });
     }
 
     // This function is a hack to have it excluded by `forge coverage` until
