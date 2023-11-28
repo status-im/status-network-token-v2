@@ -1,1 +1,3 @@
 forge-std/=lib/forge-std/src/
+@vacp2p/minime/contracts/=lib/minime/contracts/
+@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/
