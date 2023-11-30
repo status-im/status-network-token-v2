@@ -1,0 +1,3 @@
+rule sanity {
+  assert true;
+}
