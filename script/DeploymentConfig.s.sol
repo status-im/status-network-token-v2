@@ -24,9 +24,16 @@ contract DeploymentConfig is Script {
         deployer = _broadcaster;
         if (block.chainid == 31_337) {
             activeNetworkConfig = getOrCreateAnvilEthConfig();
+        } else if (block.chainid == 11_155_111) {
+            activeNetworkConfig = getSepoliaConfig();
         } else {
             revert DeploymentConfig_NoConfigForChain(block.chainid);
         }
+    }
+
+    function getSepoliaConfig() public view returns (NetworkConfig memory) {
+        return
+            NetworkConfig({ deployer: deployer, tokenName: "Status Test Token", tokenSymbol: "STT", decimalUnits: 18 });
     }
 
     function getOrCreateAnvilEthConfig() public view returns (NetworkConfig memory) {
