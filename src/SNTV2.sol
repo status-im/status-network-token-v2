@@ -7,8 +7,9 @@ contract SNTV2 is MiniMeToken {
     constructor(
         string memory _tokenName,
         uint8 _decimalUnits,
-        string memory _tokenSymbol
+        string memory _tokenSymbol,
+        bool _transferable
     )
-        MiniMeToken(MiniMeToken(payable(address(0))), 0, _tokenName, _decimalUnits, _tokenSymbol, true)
+        MiniMeToken(MiniMeToken(payable(address(0))), 0, _tokenName, _decimalUnits, _tokenSymbol, _transferable)
     { }
 }
