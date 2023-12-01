@@ -14,7 +14,7 @@ contract Deploy is BaseScript {
             deploymentConfig.activeNetworkConfig();
 
         vm.startBroadcast(broadcaster);
-        SNTV2 sntV2 = new SNTV2(tokenName, decimalUnits, tokenSymbol);
+        SNTV2 sntV2 = new SNTV2(tokenName, decimalUnits, tokenSymbol, true);
         SNTTokenController controller = new SNTTokenController(payable(address(sntV2)), false);
         sntV2.changeController(payable(address(controller)));
         vm.stopBroadcast();
