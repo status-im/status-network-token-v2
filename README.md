@@ -11,6 +11,14 @@ This is the second iteration of [Status Network Token](https://github.com/status
 version of the token uses a lot of legacy code. This repository implements a more modern version based on our
 [MiniMeToken](https://github.com/vacp2p/minime) fork.
 
+## Deployments
+
+| **Contract**       | **Address**                                                                                                                     | **Snapshot**                                                                                                     |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Sepolia**        |                                                                                                                                 |                                                                                                                  |
+| SNTV2              | [`0xE452027cdEF746c7Cd3DB31CB700428b16cD8E51`](https://sepolia.etherscan.io/address/0xE452027cdEF746c7Cd3DB31CB700428b16cD8E51) | [`2ac31e`](https://github.com/status-im/status-network-token-v2/commit/2ac31ea230cd9e89eff700b65da8a8b8024f3d79) |
+| SNTTokenController | [`0x785e6c5af58FB26F4a0E43e0cF254af10EaEe0f1`](https://sepolia.etherscan.io/address/0x785e6c5af58FB26F4a0E43e0cF254af10EaEe0f1) | [`2ac31e`](https://github.com/status-im/status-network-token-v2/commit/2ac31ea230cd9e89eff700b65da8a8b8024f3d79) |
+
 ## Usage
 
 This is a list of the most frequently needed commands.
