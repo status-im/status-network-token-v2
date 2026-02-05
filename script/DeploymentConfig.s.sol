@@ -26,6 +26,8 @@ contract DeploymentConfig is Script {
             activeNetworkConfig = getOrCreateAnvilEthConfig();
         } else if (block.chainid == 11_155_111) {
             activeNetworkConfig = getSepoliaConfig();
+        } else if (block.chainid == 560_048) {
+            activeNetworkConfig = getHoodiConfig();
         } else {
             revert DeploymentConfig_NoConfigForChain(block.chainid);
         }
@@ -36,13 +38,16 @@ contract DeploymentConfig is Script {
             NetworkConfig({ deployer: deployer, tokenName: "Status Test Token", tokenSymbol: "STT", decimalUnits: 18 });
     }
 
+    function getHoodiConfig() public view returns (NetworkConfig memory) {
+        return
+            NetworkConfig({ deployer: deployer, tokenName: "Status Test Token", tokenSymbol: "STT", decimalUnits: 18 });
+    }
+
     function getOrCreateAnvilEthConfig() public view returns (NetworkConfig memory) {
-        return NetworkConfig({
-            deployer: deployer,
-            tokenName: "Status Network Token",
-            tokenSymbol: "SNT",
-            decimalUnits: 18
-        });
+        return
+            NetworkConfig({
+                deployer: deployer, tokenName: "Status Network Token", tokenSymbol: "SNT", decimalUnits: 18
+            });
     }
 
     // This function is a hack to have it excluded by `forge coverage` until
